@@ -1,0 +1,47 @@
+﻿@import "tailwindcss";
+
+:root {
+  --accent: #c8102e;
+  --text: #1f1f23;
+  --muted: #6b7280;
+  --background: #fafaf9;
+  --border: #e7e5e4;
+  --surface: #ffffff;
+  --sans: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: var(--sans);
+  color: var(--text);
+  background: var(--background);
+}
+
+* { box-sizing: border-box; }
+html { min-width: 320px; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: var(--background); }
+button, input, select, textarea { font: inherit; }
+button, a, input, select, textarea { outline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--accent); }
+#root { min-height: 100vh; }
+
+.report-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 640px) {
+  .report-grid { grid-template-columns: 1fr; }
+  .public-nav { display: none !important; }
+}
+
+.app-shell { min-height: 100vh; }
+.brand-accent { color: var(--accent); }
+.btn { min-height: 44px; border-radius: 8px; border: 1px solid transparent; padding: 10px 16px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.btn-primary { background: var(--accent); color: white; }
+.btn-primary:hover { background: #a50d27; }
+.btn-outline { background: white; color: var(--accent); border-color: var(--accent); }
+.field { width: 100%; min-height: 44px; border: 1px solid #d1d5db; border-radius: 8px; background: white; padding: 10px 12px; }
+.field:focus { border-color: var(--accent); }
+.field-error { border-color: #b91c1c; }
+.error-text { color: #b91c1c; font-size: 13px; margin-top: 4px; }
+.card { background: white; border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+.status-dot { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; }
+.status-dot::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
