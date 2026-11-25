@@ -11,6 +11,10 @@ import ReportSuccessPage from './pages/public/ReportSuccessPage'
 import StatusCheckPage from './pages/public/StatusCheckPage'
 import StatusResultPage from './pages/public/StatusResultPage'
 import CompleteReportPage from './pages/public/CompleteReportPage'
+import DashboardPage from './pages/satgas/DashboardPage'
+import CasesPage from './pages/satgas/CasesPage'
+import ManualEntryPage from './pages/satgas/ManualEntryPage'
+import CaseDetailPage from './features/case-detail/CaseDetailPage'
 
 function StaffPage({ title }) {
   return <div className="card" style={{ padding: 28 }}><h1 style={{ fontSize: 28, margin: '0 0 8px' }}>{title}</h1><p style={{ color: 'var(--muted)' }}>Implementasi halaman pada fase berikutnya.</p></div>
@@ -31,10 +35,10 @@ export default function App() {
       <Route path="/login" element={<LoginPage />} />
 
       <Route element={<ProtectedRoute allowedRoles={[ROLES.SATGAS]}><StaffLayout /></ProtectedRoute>}>
-        <Route path="/satgas/dashboard" element={<StaffPage title="Dashboard Satgas" />} />
-        <Route path="/satgas/kasus" element={<StaffPage title="Daftar Kasus" />} />
-        <Route path="/satgas/kasus/:id" element={<StaffPage title="Detail Kasus" />} />
-        <Route path="/satgas/input-manual" element={<StaffPage title="Input Manual" />} />
+        <Route path="/satgas/dashboard" element={<DashboardPage />} />
+        <Route path="/satgas/kasus" element={<CasesPage />} />
+        <Route path="/satgas/kasus/:id" element={<CaseDetailPage />} />
+        <Route path="/satgas/input-manual" element={<ManualEntryPage />} />
       </Route>
 
       <Route element={<ProtectedRoute allowedRoles={[ROLES.PEJABAT]}><StaffLayout /></ProtectedRoute>}>

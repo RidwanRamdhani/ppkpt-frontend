@@ -11,6 +11,7 @@ npm run dev
 ```
 
 Set `VITE_USE_MOCK=true` untuk data dummy atau `false` untuk memakai API pada `VITE_API_BASE_URL`.
+Dalam mode mock, login menerima kredensial apa pun: nama pengguna yang mengandung `pejabat` masuk sebagai Pejabat, sedangkan nama lainnya masuk sebagai Satgas. Gunakan password `GantiPassword123!` untuk mencoba alur ganti password pertama kali.
 
 ## Build dan lint
 
